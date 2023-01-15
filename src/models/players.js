@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 
- const playerSchema = new  mongoose.Schema({
+ const playerSchema = new mongoose.Schema({
     ranking:{
             type:Number,
             required:true,
@@ -13,28 +13,28 @@ const mongoose = require("mongoose");
         trim:true
         
     },
-    dob:{
+    height:{
         type:Number,
         required:true,
-        trim:true
+    
     },
     country:{
         type:String,
         required:true,
-        trim:true
+        
     },
-    score:{
-        type:String,
+    weight:{
+        type:Number,
         required:true,
-        trim:true
+        
     },
-    event:{
+    sex:{
         type:String,
-        default:"100m"
+        required:true
     }
 
  })
 
- const playersdb = new mongoose.model("player",playerSchema);
+ const Player =  mongoose.model("Player",playerSchema);
 
- module.export =playersdb;
+ module.exports =Player;
